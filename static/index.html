@@ -30,20 +30,6 @@
     <h1>yummy tag buffet</h1>
     <p><span style="text-decoration: line-through">Eats your</span> <em>Ate my</em> <a href="http://del.icio.us/">del.icio.us</a> tags and spits out a tasty timeline.</p>
   </div>
-  <div id="login">
-    <p>Your del.icio.us login info please:</p>
-    <form action="/posts" method="post" onsubmit="Element.hide($('login_button')); Element.show($('loading')); new Ajax.Request('/posts', {asynchronous:true, evalScripts:true, onComplete:function(request){Element.hide($('loading')); Element.show($('login_button'))}, parameters:Form.serialize(this)}); return false;">
-    <div>
-      <label for="delicious_username">username</label>
-      <input id="username" name="username" size="12" type="text" value="burnto" />
-      <label for="delicious_password">password</label>
-      <input id="password" name="password" size="12" type="password" value="" />
-      <input id="login_button" onmouseout="this.src = 'images/pacman.png'" onmouseover="this.src = 'images/pacman_hi.png'" src="images/pacman.png" type="image" />
-      <img alt="Pacman_eating" id="loading" src="images/pacman_eating.gif" style="display: none" />
-    </div>
-    </form>
-  </div> 
-
 </div>
 
 <div id="content">
