@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" version="-//W3C//DTD XHTML 1.1//EN" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="Author" content="Brent Fitzgerald" />
+  <!-- (c) Copyright 2006 by PLW. All Rights Reserved. -->
+  <meta name="Keywords" content="PLW, Physical Language Workshop, MIT, Media Lab, Brent Fitzgerald, timeline, folksonomy, del.icio.us" />
+  <meta name="Description" content="Eats your del.icio.us tags and spits out a tasty timeline." />
+  
+	<title>Yummy Yummy Yummy I've got Tags in my Tummy</title>
+	<link href="stylesheets/site.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div id="page">
+
+
+
+
+<div id="warning" style='display: none'>
+  <p></p>
+</div>
+
+
+
+<div id="header">
+  <div id="title">
+    <h1>yummy tag buffet</h1>
+    <p><span style="text-decoration: line-through">Eats your</span> <em>Ate my</em> <a href="http://del.icio.us/">del.icio.us</a> tags and spits out a tasty timeline.</p>
+  </div>
+  <div id="login">
+    <p>Your del.icio.us login info please:</p>
+    <form action="/posts" method="post" onsubmit="Element.hide($('login_button')); Element.show($('loading')); new Ajax.Request('/posts', {asynchronous:true, evalScripts:true, onComplete:function(request){Element.hide($('loading')); Element.show($('login_button'))}, parameters:Form.serialize(this)}); return false;">
+    <div>
+      <label for="delicious_username">username</label>
+      <input id="username" name="username" size="12" type="text" value="burnto" />
+      <label for="delicious_password">password</label>
+      <input id="password" name="password" size="12" type="password" value="" />
+      <input id="login_button" onmouseout="this.src = 'images/pacman.png'" onmouseover="this.src = 'images/pacman_hi.png'" src="images/pacman.png" type="image" />
+      <img alt="Pacman_eating" id="loading" src="images/pacman_eating.gif" style="display: none" />
+    </div>
+    </form>
+  </div> 
+
+</div>
+
+<div id="content">
+  <div id="track">
+    <div id="handle_range" class="range_handle">
+    </div>
+    <div id="handle2" class="end_handle">
+    </div>
+    <div id="handle1" class="end_handle">
+    </div>
+  </div>
+
+  <div id="tag_dates">
+    <span id="from_date">
+    </span>
+    -
+    <span id="to_date">
+    </span>
+  </div>
+
+  <div id="debug"></div>
+
+  <div id="tag_panel">
+    <h2 id="tags_title">tags</h2>
+    <div id="taggings">
+    </div>
+  </div>
+  
+  <div id="bookmarks_panel">
+    <h2 id="bookmarks_title">bookmarks</h2>
+    <div id="bookmarks">
+    </div>
+  </div>
+  
+
+</div>
+
+
+<div id="footer_wrapper">
+<div id="footer">
+		
+		<!--Creative Commons License-->
+		
+		<div id="attr">
+		  <p>Created by <a href="http://brentfitzgerald.com/">Brent Fitzgerald</a>.<br/>May be reused under the <a href="http://creativecommons.org/licenses/by-sa/2.5/" rel="license">Creative Commons Attribution-Share Alike 2.5 License</a>.
+  	</p>
+		
+<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    	<Work rdf:about="">
+    		<license rdf:resource="http://creativecommons.org/licenses/by-sa/2.5/" />
+    	<dc:type rdf:resource="http://purl.org/dc/dcmitype/InteractiveResource" />
+    	</Work>
+    	<License rdf:about="http://creativecommons.org/licenses/by-sa/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/><requires rdf:resource="http://web.resource.org/cc/ShareAlike"/></License></rdf:RDF> -->
+  	</p>
+  <div>
+</div>
+</div>
+</div>
+
+
+<!--
+  Created by
+   _                           _                                   _        
+  | |                         | | o                               | |    |  
+  | |   ,_    _   _  _  _|_   | |   _|_  __   __,  _   ,_    __,  | |  __|  
+  |/ \_/  |  |/  / |/ |  |    |/  |  |  / / _/  | |/  /  |  /  |  |/  /  |  
+   \_/    |_/|__/  |  |_/|_/  |__/|_/|_/ /_/ \_/|/|__/   |_/\_/|_/|__/\_/|_/
+                              |\          /|   /|                           
+                              |/          \|   \|
+-->  
+  
+<script src="javascripts/prototype.js" type="text/javascript"></script> 
+<script src="javascripts/scriptaculous.js" type="text/javascript"></script> 
+<script src="javascripts/application.js" type="text/javascript"></script> 
+<script type="text/javascript" src="javascripts/data.js"></script>
+</body>
+</html>
