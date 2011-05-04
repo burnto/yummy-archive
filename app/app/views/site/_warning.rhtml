@@ -1,0 +1,9 @@
+<% 
+  message ||= nil
+  user ||= nil
+%>
+
+<div id="warning" <%= "style='display: none'" unless message %>>
+  <p><%= message %></p>
+</div>
+

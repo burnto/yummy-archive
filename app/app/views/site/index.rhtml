@@ -1,0 +1,68 @@
+
+<%= render :partial => "warning", :locals => {:user => @user, :message => (@response_exception && @response_exception.message)} %>
+
+<div id="header">
+  <div id="title">
+    <h1>yummy tag buffet</h1>
+    <p>Eats your <%= link_to "del.icio.us", "http://del.icio.us/" %> tags and spits out a tasty timeline.</p>
+  </div>
+  <div id="login">
+    <p>Your del.icio.us login info please:</p>
+    <% remote_form_for( :delicious, 
+                {:url => {:controller => "site", :action => "posts"}, 
+                 :before => "Element.hide($('login_button')); Element.show($('loading'))",
+               :complete => "Element.hide($('loading')); Element.show($('login_button'))"}) do |f| %>
+    <div>
+      <label for="delicious_username">username</label>
+      <%= text_field_tag :username, @user, :size => 12 %>
+      <label for="delicious_password">password</label>
+      <%= password_field_tag :password, "", :size => 12 %>
+      <%= image_submit_tag "pacman.png", :onmouseover => "this.src = '#{image_path("pacman_hi.png")}'",
+                       :onmouseout => "this.src = '#{image_path("pacman.png")}'", :id => "login_button"%>
+      <%= image_tag "pacman_eating.gif", :style => "display: none", :id => "loading" %>
+    </div>
+    <% end %>
+  </div> 
+
+</div>
+
+<div id="content">
+  <div id="track">
+    <div id="handle_range" class="range_handle">
+    </div>
+    <div id="handle2" class="end_handle">
+    </div>
+    <div id="handle1" class="end_handle">
+    </div>
+  </div>
+
+  <div id="tag_dates">
+    <span id="from_date">
+    </span>
+    -
+    <span id="to_date">
+    </span>
+  </div>
+
+  <div id="debug"></div>
+
+  <div id="tag_panel">
+    <h2 id="tags_title">tags</h2>
+    <div id="taggings">
+    </div>
+  </div>
+  
+  <div id="bookmarks_panel">
+    <h2 id="bookmarks_title">bookmarks</h2>
+    <div id="bookmarks">
+    </div>
+  </div>
+  
+
+</div>
+<script type="text/javascript">
+
+var taggings = <%= @taggings.to_json %>;
+var tagContainer = new TagContainer(taggings, '<%= @user %>');
+
+</script>

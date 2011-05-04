@@ -1,0 +1,199 @@
+
+body {
+  background-color:white;
+  color:       black;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  margin:      0;
+  font-size:   13px;
+} 
+
+p, h2 {
+  margin: 0 0 7px 0;  
+}
+
+input[type=text], input[type=password] {
+  border: 1px solid #444;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+input[type=image] {
+  margin-top: 2px;
+}
+
+h1 {
+  font-size:    32px;
+  color:        black;
+  font-weight:  bold;
+  letter-spacing: -1px;
+  margin: 0 0 3px 0;
+}
+
+h2 {
+  font-size:   18px;
+}
+
+a {
+  color:#09f;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+a:hover {
+  background-color:#09f;
+  color: white;
+}
+
+img {
+  border: none;
+}
+
+form {
+  margin:0pt;
+}
+
+ul, li {
+  list-style:       none;
+  margin:           0pt;
+  padding:          0pt;
+}
+
+#page {
+  min-width: 700px;
+  margin: 30px 40px;
+  padding-bottom: 30px;
+}
+
+#header {
+  position: relative;
+  margin-bottom: 0;
+  padding-left: 60px;
+  background: white url(../images/pacman_big.png) no-repeat bottom left;
+}
+
+
+
+#license {
+}
+
+#license img {
+    margin-bottom: -2px;
+}
+
+#license span {
+    margin-right: .3em;
+}
+
+#title, #login {
+  width: 48%;
+}
+
+#title {
+}
+
+#footer_wrapper {
+    clear: both;
+    padding-top: 30px;
+}
+
+#footer {
+    font-size: 11px;
+    line-height: 15px;
+    width: 48%;
+}
+
+#login {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+#tag_dates {
+  margin-bottom: 15px;
+  margin-left: -1px;
+  font-weight: bold;
+}
+
+#track {
+  border: 1px solid black;
+  background-color: white;
+  height:5px;
+  position:relative;
+  margin: 20px 0 0;
+}
+
+.end_handle {
+  z-index:          1000;
+  width:            11px;
+  height:           12px;
+  background:       transparent url(../images/handle.png);
+  cursor:           move;
+  position:         absolute;
+  cursor:           move;
+  top:              -12px;
+}
+
+.end_handle:hover, #handle1.draggable_hi, #handle2.draggable_hi {
+/*  background-color: #966;*/
+  background:       transparent url(../images/handle_hi.png);
+}
+
+.range_handle {
+  z-index:          990;
+  width:            0px;
+  height:           5px;
+  background-color: #09f;
+  position:         absolute;
+  cursor:           move;
+}
+
+.range_handle:hover, #handle_range.draggable_hi {
+  background-color: #09f;  
+}
+
+#content {
+  clear:       both;
+  padding-top: 1px;
+}
+
+#content a {
+  color: black;
+  font-weight: normal;
+}
+
+#content a:hover {
+  color: white;
+}
+
+
+#tag_panel {
+  width: 48%;
+  float: left;
+}
+
+
+#taggings {
+  line-height: 15px;
+}
+
+#bookmarks_panel {
+  float: right;
+  width: 48%;
+}
+
+.bookmark_date {
+  font-size: 10px;
+  color: #444;
+}
+
+#tag_panel .hi, #bookmarks_panel .hi {
+  background-color:#09f;
+  color: white;
+}
+
+div#warning {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
